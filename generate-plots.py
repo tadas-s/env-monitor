@@ -43,7 +43,8 @@ class Plot:
         ax1.grid(True)
         ax2.legend([l1, l2], ['Temperature', 'Humidity'], framealpha=0.9)
 
-        plt.savefig("%s.png" % self.month.lower())
+        file_name = "%s.png" % self.month.lower()
+        plt.savefig(Path(__file__).parent.absolute().joinpath(file_name))
 
 matplotlib.use('agg')
 
