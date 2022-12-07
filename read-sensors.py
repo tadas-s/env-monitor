@@ -1,5 +1,6 @@
 from Adafruit_BME280 import *
 import sqlite3
+from pathlib import Path
 
 sensor = BME280(t_mode=4, p_mode=4, h_mode=4)
 
@@ -11,7 +12,7 @@ print("Temperature: %3.2f" % temperature)
 print("Humidity: %3.2f" % humidity)
 print("Pressure: %3.2f" % pressure)
 
-con = sqlite3.connect("readings.db")
+con = sqlite3.connect(Path(__file__).parent.absolute().joinpath("readings.db"))
 cur = con.cursor()
 
 cur.execute("""
