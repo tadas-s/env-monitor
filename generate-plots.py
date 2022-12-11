@@ -22,7 +22,7 @@ class Plot:
     def plot(self):
         plt.clf()
 
-        fig = plt.figure()
+        fig = plt.figure(figsize=(16,9))
         ax1 = fig.add_subplot(111)
         ax1.set_title("Environmental data for %s" % self.month)
 
